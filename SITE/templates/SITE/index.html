@@ -1,0 +1,236 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title%} BotRASP{% endblock %}
+
+{% block content%}
+<!-- Надпись главный экран -->
+      <div class="pagepiling">
+        <div data-anchor="page1" class="pp-scrollable text-white section section-1">
+          <div class="scroll-wrap">
+            <div class="section-bg" style="background-image:url({% static 'img/mainBG.png'%});"></div>
+            <div class="scrollable-content">
+              <div class="vertical-centred">
+                <div class="boxed boxed-inner">
+                  <div class="boxed">
+                    <div class="container">
+                      <div class="intro">
+                        <div class="row">
+                          <div class="col-md-8 col-lg-6" style="margin-top: 10%;">
+                            <h1 class="display-2 text-white  wow fadeIn" data-wow-delay="0.1s"><span class="text-primary">Я,</span> это удобство</h1>
+                            <a class="popup-telegramm"  href="https://t.me/RaspTSPK_bot"><span class="icon ion-ios-play"><i class="bi bi-play-fill"></i></span>Начать</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Преимущества -->
+        <div data-anchor="page2" class="pp-scrollable section section-2">
+          <div class="scroll-wrap">
+            <div class="scrollable-content">
+              <div class="vertical-title text-white  d-none d-lg-block"><span>Преимущества</span></div>
+              <div class="vertical-centred">
+                <div class="boxed boxed-inner">
+                  <div class="boxed">
+                    <div class="container">
+                      <div class="intro">
+                        <h2 class="title mb-5 pb-5"> <span class="text-primary">Мои</span> преимущества</h2>
+                        <div class="row-specialization row">
+                          <div class="col-specialization col-md-6 col-lg-4">
+                             <img alt="" src="{% static 'img/search.svg' %}" style="width: 150px;">
+                            <h4 class="text-uppercase">Быстрый поиск</h4>
+                            <p>
+                                <p style="margin-bottom: 0;">Поиск кабинета или преподавателя? Легко!</p>
+                                Нужно только отрыть диалог со мной и задать интересующий меня запрос.
+                                Я могу найти кабинет или преподавателя и не нужно будет открывать большое количество сайтов!
+
+                            </p>
+                          </div>
+                          <div class="col-specialization col-md-6 col-lg-4">
+                              <img alt="" src="{% static 'img/alerts.svg' %}" style="width: 150px;">
+                            <h4 class="text-uppercase">Уведомления</h4>
+                            <p>
+                                <p style="margin-bottom: 0;">Надоело каждый раз заходить на сайт?</p>
+                                Я смогу отправлять тебе актуальное расписание, как только оно появится!
+                                Нужно только подписаться на мою рассылку, и ты всегда будешь в курсе событий.
+                            </p>
+                          </div>
+                          <div class="col-specialization col-md-6 col-lg-4">
+                              <img alt="" src="{% static 'img/hand.svg' %}" style="width: 150px;">
+                            <h4 class="text-uppercase">Удобство</h4>
+                            <p>
+                                <p style="margin-bottom: 0;">Всё находится в одном месте!</p>
+                                Вы с лёгкостью сможете посмотреть всю интересующую вас информацию о расписании в привычном вам приложении.
+                                И чтобы это осуществить понадобится только подписаться на меня.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- API -->
+        <div data-anchor="page3" class="pp-scrollable section section-6">
+          <div class="scroll-wrap">
+            <div class="scrollable-content">
+              <div class="vertical-title text-white d-none d-lg-block"><span>API</span></div>
+                <div class="vertical-centred">
+                  <div class="boxed boxed-inner">
+                    <div class="boxed">
+                      <div class="container">
+                        <div class="intro">
+                          <h2 class="title text-white"><span class="text-primary">API</span> для ваших целей</h2>
+                          <div class="row">
+                            <div class="col-sm-6 mb-5 col-xl-12">
+                              <p>Чтобы получить информацию по расписанию, отправьте GET запрос на этот URL с указанием всех необходимых параметров:</p>
+                                <ul>
+                                    <li>searchName - Имя поиска(например: ИСиП-42)</li>
+                                    <li>dateNum - Дата поиска(например: 2023-02-22)</li>
+                                    <li>dataType - Вариант ответа JSON или фото</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 mb-5 col-xl-12">
+                              <div class="tab-panels">
+                                  <section id="javascriptcode" class="tab-panel">
+                                    <div class="highlight">
+                                      <pre>
+                                        <code id="text_js" class="language-javascript" data-lang="javascript">
+https://botrasp.ru/api/?searchName= Параметр поиска &dateNum= Дата &dataType= photo(или json)
+                                        </code>
+                                        <span class="copy-btn-code" id='copy_js' onclick="copy_text_code(`text_js` , `copy_js`)"><i class="bi-clipboard"></i></span>
+                                      </pre>
+                                    </div>
+                                  </section>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 mb-5 col-xl-12">
+                              <p>GET запрос</p>
+                              Ниже представленны кусочки кода, которые можно сразу вставить в Ваш проект.
+                              В случае с сохранением изображения следует указывать директорию для сохранения файла (все изображения сохраняются в формате PNG)
+                              В некоторых случаях JSON массив может отображаться некорретно
+                            </div>
+                            <div class="col-sm-6 mb-5 col-xl-12">
+                              <div class="tabset">
+                                <input type="radio" name="tabsetcode2" id="tab1code2" aria-controls="javascriptcode" checked="">
+                                <label for="tab1code2">JavaScript</label>
+
+                                <input type="radio" name="tabsetcode2" id="tab2code2" aria-controls="phpcode">
+                                <label for="tab2code2">PHP</label>
+
+                                <input type="radio" name="tabsetcode2" id="tab3code2" aria-controls="pythoncode">
+                                <label for="tab3code2">Python</label>
+
+                                <div class="tab-panels">
+                                  <section class="tab-panel">
+                                    <div class="highlight">
+                                      <pre>
+                                        <code id="text_api" class="language-javascript" data-lang="javascript">
+curl --request GET --url https://api.pikwy.com/
+--header 'Content-Type: application/json'
+--data '{"u":"https://wikipedia.org","fs":0,"rt":"json","tkn":"{YOUR_API_TOKEN}"}'
+                                        </code>
+                                        <span class="copy-btn-code" id='copy_api' onclick="copy_text_code(`text_api` , `copy_api`)"><i class="bi-clipboard"></i></span>
+                                      </pre>
+                                    </div>
+                                  </section>
+                                    <section id="phpcode" class="tab-panel">
+                                      <div class="highlight">
+                                        <pre>
+                                          <code id="text_php" class="language-php" data-lang="php">
+curl --request GET --url https://api.pikwy.com/
+--header 'Content-Type: application/json'
+--data '{"u":"https://wikipedia.org","fs":0,"rt":"json","tkn":"{YOUR_API_TOKEN}"}'
+                                          </code>
+                                          <span class="copy-btn-code" id='copy_php' onclick="copy_text_code(`text_php` , `copy_php`)"><i class="bi-clipboard"></i></span>
+                                        </pre>
+                                      </div>
+                                    </section>
+                                    <section id="pythoncode" class="tab-panel">
+                                      <div class="highlight">
+                                        <pre>
+                                          <code id="text_python" class="language-python">
+curl --request GET --url https://api.pikwy.com/
+--header 'Content-Type: application/json'
+--data '{"u":"https://wikipedia.org","fs":0,"rt":"json","tkn":"{YOUR_API_TOKEN}"}'
+                                          </code>
+                                          <span class="copy-btn-code" id='copy_python' onclick="copy_text_code(`text_python` , `copy_python`)"><i class="bi-clipboard"></i></span>
+                                        </pre>
+                                      </div>
+                                    </section>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- Обратная связь -->
+        <div data-anchor="page4" class="pp-scrollable section section-8">
+          <div class="scroll-wrap">
+            <div class="scrollable-content">
+              <div class="vertical-title text-white d-none d-lg-block"><span>Обратная связь</span></div>
+              <div class="vertical-centred">
+                <div class="boxed boxed-inner">
+                  <div class="boxed">
+                    <div class="container">
+                      <div class="intro overflow-hidden">
+                        <div class="row" style="margin-top: 15%;">
+                          <div class="col-md-6">
+                            <h2 class="title">Связаться</h2>
+                            <h5 class="text-muted">У вас есть вопросы или вы нашли ошибку? Напишите  нам на почту. Наша команда ответит вам в течение нескольких часов.</h5>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="contact-info">
+                              <form class="js-form" novalidate="novalidate" method="POST">
+                                <div class="row">
+                                  <div class="form-group col-sm-6">
+                                    <input type="text" name="name" required="" placeholder="Ваше имя" aria-required="true" style="border-radius: 15px;">
+                                  </div>
+                                  <div class="form-group col-sm-6">
+                                    <input type="email" required="" name="email" placeholder="Контактный Email" style="border-radius: 15px;">
+                                  </div>
+                                  <div class="form-group col-sm-12">
+                                    <input type="text" name="subject" placeholder="Тема письма" style="border-radius: 15px;">
+                                  </div>
+                                  <div class="form-group col-sm-12">
+                                    <textarea name="message" required="" placeholder="Опишите проблему....." style="border-radius: 15px;"></textarea>
+                                  </div>
+                                  <div class="form-group form-group-message col-sm-12">
+                                    <span id="success" class="text-primary">Письмо отправленно! Спасибо вам</span>
+                                    <span id="error" class="text-primary">Кажется что то пошло не так...</span>
+                                  </div>
+                                  <div class="col-sm-12"><button type="submit" class="btn" style="border-radius: 15px;">Отправить</button></div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
