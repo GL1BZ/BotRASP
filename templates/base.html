@@ -1,0 +1,93 @@
+{% load static %}
+
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+
+    <link rel="shortcut icon" href="favicon.png">
+    <title>{% block title%} {% endblock %}</title>
+  </head>
+<body>
+    <div class="animsition">
+      <div class="loader"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+
+      <!-- Content CLick Capture-->
+
+      <div class="click-capture"></div>
+
+      <!-- Сайдбар меню -->
+
+      <div class="menu">
+        <span class="close-menu icon-cross2 right-boxed"></span>
+        <ul class="menu-list right-boxed">
+          <li  data-menuanchor="page1">
+            <a href="#page1">Главная</a>
+          </li>
+          <li  data-menuanchor="page2">
+            <a href="#page2">Преимущества</a>
+          </li>
+          <li  data-menuanchor="page3">
+            <a href="#page3">API</a>
+          </li>
+          <li  data-menuanchor="page4">
+            <a href="#page4">Обратная связь</a>
+          </li>
+        </ul>
+        <div class="menu-footer right-boxed">
+          <div class="social-list">
+            АААААА QR
+          </div>
+          <div class="copy">©2023, Botrasp.ru For all students with ♥</div>
+        </div>
+      </div>
+
+      <!-- Верхнее меню -->
+
+      <header class="navbar navbar-fullpage boxed">
+        <div class="navbar-bg"></div>
+
+        <!-- Логотип с названием -->
+        <a class="brand" href="#">
+          <img alt="" src="{% static 'img/brand.png' %}" style="width: 30px;">
+          <div class="brand-info">
+            <div class="brand-name">BotRASP</div>
+          </div>
+        </a>
+
+        <!-- Кнопка сайдбара -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </header>
+
+      <!-- Копирайт левый нижний угол -->
+      <div class="copy-bottom white boxed">© 2023 Botrasp.ru</div>
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+    <!-- jQuery -->
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/animsition.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.pagepiling.min.js' %}"></script>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>
