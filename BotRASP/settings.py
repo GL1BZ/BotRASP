@@ -115,7 +115,7 @@ STATICFILES_DIRS = [
 
 #Телеграмм бот
 
-TOKEN = '5925007921:AAH85uyb3pQsV_nBrSPfwrmJOChthgAyCt8'
+TOKEN = #YOUR_TOKEN
 
 PROXY_URL = 'https://telegg.ru/orig/bot'
 
