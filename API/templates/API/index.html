@@ -1,0 +1,50 @@
+{% extends 'base_api.html' %}
+
+{% load index %}
+{% load range_filter %}
+
+{% load static %}
+
+{% block css_additional%}
+<link rel="stylesheet" href="{% static 'API/css/style_api.css' %}">
+{% endblock %}
+
+{% block title%} {{ group }} {% endblock %}
+
+{% block content%}
+<div class="rasp no-bootstrap">
+    <table class="tableRasp no-bootstrap">
+    <tbody>
+        <tr>
+            <th colspan="3" class="date">{{date}}</th>
+        </tr>
+        <tr>
+            <th colspan="2">Время</th>
+            <th>{{ searchName }}</th>
+        </tr>
+        {% for row in raspList %}
+            <tr>
+                {% if row != False %}
+                    <th class="num">{{ forloop.counter }}</th>
+                    <th class="time">{{ time|index:forloop.counter0 }}</th>
+                    <th class="object">
+                        {% for i in row|length|create_range %}
+                            {% if i == 0 %}
+                                <p class="objectSelect">{{row|index:i}}</p>
+                            {% else %}
+                                {{row|index:i}}
+                            {% endif %}
+                        {% endfor %}
+                    </th>
+                {% else %}
+                    <th class="num">{{ forloop.counter }}</th>
+                    <th class="time">{{ time|index:forloop.counter0 }}</th>
+                    <th class="object">
+                    </th>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
