@@ -1,6 +1,6 @@
 #FILES
 db.sqlite3
-pip-requirements.txt
+pip-requirements
 
 #FOLDERS
 /BotRASP
